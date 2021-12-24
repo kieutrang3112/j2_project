@@ -1,64 +1,11 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Quản Lý</title>
-    <!-- css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="css/styles.css" rel="stylesheet">
-
-    <link href="css/styles.css" rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-
-<body>
     <!-- header -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#"><span>Trang </span> Admin</a>
-                <ul class="user-menu">
-                    <li class="dropdown user user-menu">
-
-                    </li>
-
-                </ul>
-            </div>
-        </div><!-- /.container-fluid -->
-    </nav>
+    <?php include_once "root/header_index.php" ?>
     <!-- header -->
     <!-- sidebar left-->
-    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <form role="search">
-        </form>
-        <ul class="nav menu">
-            <li class="active"><a href="index.html">
-
-                    </svg> Tổng quan
-                </a></li>
-            <li>
-                <a href="category.html">Danh Mục</a>
-            </li>
-            <li>
-                <a href="listproduct.html">
-                    Sản phẩm
-                </a>
-            </li>
-            <li>
-                <a href="order.html">Đơn hàng
-                </a>
-            <li role="presentation" class="divider"></li>
-            <li>
-                <a href="listuser.html">
-                    Quản lý thành viên
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
+        <?php
+        include_once "root/sidebar.php"
+        ?>
     <!--/. end sidebar left-->
 
     <!--main-->
@@ -118,12 +65,7 @@
 
         <!--end main-->
 
-        <!-- javascript -->
-        <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/chart.min.js"></script>
-        <script src="js/chart-data.js"></script>
+    <?php
+        include_once "root/footer.php";
 
-</body>
-
-</html>
+    ?>
