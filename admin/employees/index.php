@@ -9,6 +9,7 @@ include_once "../root/sidebar.php";
     <div class="row">
         <div class="col-lg-6">
             <h1 class="page-header">Thông tin nhân viên</h1>
+            <a href="create.php"><button type="button" class="btn btn-primary">Thêm</button></a>
         </div>
 
     </div>
@@ -22,7 +23,7 @@ include_once "../root/sidebar.php";
             <th>Email</th>
             <th>Số năm công tác</th>
             <th>Địa chỉ</th>
-            <th>Cấp độ</th>
+            <th>Vai trò</th>
 
         </tr>
         </thead>

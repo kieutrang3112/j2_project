@@ -33,6 +33,22 @@
                  Thông tin khách hàng
             </a>
         </li>
+        <li>
+            <a href="/admin/sign-in.php">
+                Đăng nhập
+            </a>
+        </li>
+        <li>
+            <a href="/admin/sign-out.php">
+                Đăng xuất
+            </a>
+        </li>
+        <li>
+            <a href="/admin/customers/index.php">
+                Thông tin khách hàng
+            </a>
+        </li>
+
 
     </ul>
 
