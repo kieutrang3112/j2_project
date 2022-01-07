@@ -1,0 +1,54 @@
+
+<!--đăng nhập-->
+<?php
+    session_start();
+    if(isset($_COOKIE['remember'])) {
+        $token = $_COOKIE['remember'];
+
+    require_once "root/connect.php";
+    $sql="SELECT * FROM employees
+        WHERE token='$token' ";
+    $result =mysqli_query($connect, $sql);
+    $each = mysqli_fetch_array($result);
+        $_SESSION['id'] = $each['id'];
+        $_SESSION['name'] = $each['name'];
+        header("location: ../admin/index.php");
+    }
+    if(isset($_SESSION['id'])) {
+        header("location: ../admin/index.php");
+        exit();
+    }
+
+    include_once "root/header_index.php";
+
+
+?>
+
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">Vietpro Mobile Shop - Administrator</div>
+            <div class="panel-body">
+                <div class="alert alert-danger">Tài khoản không hợp lệ !</div>
+                <form role="form" method="post" action="precess_signin.php">
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control" required placeholder="E-mail" name="mail" type="email" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" required placeholder="Mật khẩu" name="pass" type="password" value="">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input name="remember" type="checkbox" value="Remember" >Nhớ tài khoản
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div><!-- /.col-->
+</div><!-- /.row -->
+
+
