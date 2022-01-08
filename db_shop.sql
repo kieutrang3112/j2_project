@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 08, 2022 at 09:01 AM
+-- Generation Time: Jan 08, 2022 at 09:11 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -38,6 +38,13 @@ CREATE TABLE `customers` (
   `password` varchar(200) NOT NULL,
   `token` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`id`, `name`, `phone`, `gender`, `address`, `email`, `password`, `token`) VALUES
+(24, 'Khách Hàng', '0123456789', 1, 'Việt Nam', 'kh1@gmail.com', '123456', NULL);
 
 -- --------------------------------------------------------
 
@@ -264,7 +271,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `employees`
