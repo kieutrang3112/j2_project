@@ -19,11 +19,14 @@ $result = mysqli_query($connect,$sql); ?>
 			<a href="product.php?id=<?php echo $each['id'] ?>"><img class="san_pham" src="../admin/products/photo/<?php echo $each['photo'] ?>"></a>
 			<a><div class="name"><?php echo $each['name'] ?></div></a>
 			<div class="prices">Free</div>
-			<?php if(!empty($_SESSION['id'])) { ?>
-				<a href="add_to_cart.php?id=<?php echo $each['id'] ?>">
-					Thêm vào giỏ
-				</a>
-			<?php } ?>					
+			<a 
+			<?php if(!empty($_SESSION['id'])) { ?> 
+					href="add_to_cart.php?id=<?php echo $each['id'] ?>" 
+			<?php }else{  ?> 
+				   href="signin.php" 
+			<?php } ?>>
+				Thêm vào giỏ
+			</a>										
 		</div>
 	<?php } ?>
 </div>

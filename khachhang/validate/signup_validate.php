@@ -1,6 +1,6 @@
 <?php 
 
-if(empty($_POST['name']) | empty($_POST['phone']) | empty($_POST['gender']) | empty($_POST['address']) | empty($_POST['email']) | empty($_POST['password'])){
+if(!isset($_POST['name']) | !isset($_POST['phone']) | !isset($_POST['gender']) | !isset($_POST['address']) | !isset($_POST['email']) | !isset($_POST['password'])){
 	$_SESSION['error'] = 'Phải điền đầy đủ thông tin';
 	header('location:signup.php');
 	exit;
@@ -18,7 +18,9 @@ if (!preg_match('/^(\+84|0)[1-9]{9}$/', $_POST['phone'] ))
  $check_error = true;
 }
 
-if($_POST['gender'] != "0" | $_POST['gender'] != "1"){
+if($_POST['gender'] == "0" | $_POST['gender'] == "1"){
+	$check_error = false;
+}else{
 	$check_error = true;
 }
 
@@ -28,7 +30,7 @@ if (!preg_match('/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/', $_POST['email'] ))
 }
 
 
-if(strlen($_POST['password']) < 8 ){
+if(strlen($_POST['password']) < 6 ){
 	$check_error = true;
 }
 

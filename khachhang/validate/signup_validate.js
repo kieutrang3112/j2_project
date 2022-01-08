@@ -73,8 +73,8 @@
 		if(password.length===0){
 			document.getElementById('error_password').innerHTML="Mật khẩu không được để trống";
 			check_error=true;
-		}else if(password.length <8){
-			document.getElementById('error_password').innerHTML="Đặt cái mật khẩu dài hơn 8 ký tự đê";
+		}else if(password.length <6){
+			document.getElementById('error_password').innerHTML="Đặt cái mật khẩu dài hơn 6 ký tự đê";
 			check_error=true;
 		}else{
 			document.getElementById('error_password').innerHTML='';
