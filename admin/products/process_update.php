@@ -20,7 +20,7 @@ $menu_id = $_POST["menu_id"];
 
 
 
-require_once "../root/connect.php";
+require_once "../connect.php";
 $sql = "UPDATE products 
 
     SET 

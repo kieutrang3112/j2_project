@@ -1,7 +1,7 @@
 <?php
 $name = $_POST["name"];
 
-require_once "../root/connect.php";
+require_once "../connect.php";
 //    $sql = "INSERT INTO manufacturers(name) VALUES ('$name')";
 $sql = "INSERT INTO menu(name)
     VALUES('$name')";

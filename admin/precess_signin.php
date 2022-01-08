@@ -7,7 +7,7 @@
     else {
         $remember =0;
     }
-    require_once "root/connect.php";
+    require_once "connect.php";
     $sql = "SELECT * FROM employees
         WHERE email='$email' and password = '$password'";
     $result =mysqli_query($connect, $sql);
@@ -18,7 +18,7 @@
         $id = $each['id'];
         $_SESSION["id"] = $id;
         $_SESSION["name"] = $each['name'];
-        echo  "đăng nhập thành công";
+        
         if($remember) {
             $token = uniqid('user_',  true);
             $sql_token = "UPDATE employees 
@@ -26,6 +26,7 @@
             mysqli_query($connect,$sql_token);
             setcookie('remember',$token,time() + 60*60*24*30);
         }
+        header("location: ../admin/root/index.php");
     }
     else {
         echo  "dang nhap sai";

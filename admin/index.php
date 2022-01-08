@@ -1,71 +1,69 @@
 
-    <!-- header -->
-    <?php include_once "root/header_index.php" ?>
-    <!-- header -->
-    <!-- sidebar left-->
-        <?php
-        include_once "root/sidebar.php"
-        ?>
-    <!--/. end sidebar left-->
+<!--đăng nhập-->
+<?php
+    session_start();
+    if(isset($_COOKIE['remember'])) {
+        $token = $_COOKIE['remember'];
 
-    <!--main-->
-    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-        <div class="row">
-            <ol class="breadcrumb">
-                <li>
+    require_once "connect.php";
+    $sql="SELECT * FROM employees
+        WHERE token='$token' ";
+    $result =mysqli_query($connect, $sql);
+    $each = mysqli_fetch_array($result);
+        $_SESSION['id'] = $each['id'];
+        $_SESSION['name'] = $each['name'];
+        header("location: ../admin/root/index.php");
+    }
+    if(isset($_SESSION['id'])) {
+        header("location: ../admin/root/index.php");
+        exit();
+    }
 
-                    <a href="#">
-                    </a>
-                </li>
-                <li class="active">Tổng quan</li>
-            </ol>
-        </div>
-        <!--/.row-->
+    include_once "header_index.php";
 
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Tổng quan</h1>
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+</body>
+</html>
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">Vietpro Mobile Shop - Administrator</div>
+            <div class="panel-body">
+                <div class="alert alert-danger">Tài khoản không hợp lệ !</div>
+                <form role="form" method="post" action="precess_signin.php">
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control" required placeholder="E-mail" name="mail" type="email" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" required placeholder="Mật khẩu" name="pass" type="password" value="">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input name="remember" type="checkbox" value="Remember" >Nhớ tài khoản
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                    </fieldset>
+                </form>
             </div>
         </div>
-        <!--/.row-->
-        <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-9">
-                <div class="panel panel-blue panel-widget ">
-                    <div class="row no-padding">
-                        <div class="col-sm-3 col-lg-4 widget-left">
-                            <span class="glyphicon glyphicon-signal icon-50" aria-hidden="true"></span>
-                        </div>
-                        <div class="col-sm-9 col-lg-8 widget-right">
-                            <div class="large">8.000.000 đ</div>
-                            <div class="text-muted">Doanh thu tháng 12</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <div class="panel panel-teal panel-widget">
-                    <div class="row no-padding">
-                        <div class="col-sm-3 col-lg-5 widget-left">
-                            <svg class="glyph stroked male-user">
-                                <use xlink:href="#stroked-male-user"></use>
-                            </svg>
-                        </div>
-                        <div class="col-sm-9 col-lg-7 widget-right">
-                            <div class="large">24</div>
-                            <div class="text-muted">Số đơn hàng</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!--/.row-->
+    </div><!-- /.col-->
+</div><!-- /.row -->
 
 
-        <!--end main-->
-
-    <?php
-        include_once "root/footer.php";
-
-    ?>

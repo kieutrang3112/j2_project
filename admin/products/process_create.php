@@ -13,7 +13,7 @@
     move_uploaded_file($photo["tmp_name"], $path_file);
 
 
-    require_once "../root/connect.php";
+    require_once "../connect.php";
     $sql = "INSERT INTO products(name,photo,price,description,manufacturer_id,menu_id)
     VALUES ('$name','$file_name','$price','$desc','$manu_id','$menu_id')";
 

@@ -1,8 +1,8 @@
 
 <?php
-include_once "../root/header.php";
-include_once "../root/sidebar.php";
-include_once "../root/connect.php";
+include_once "../header.php";
+include_once "../sidebar.php";
+include_once "../connect.php";
 $sql = "SELECT * FROM menu";
 $menu = mysqli_query($connect,$sql);
 ?>
@@ -31,7 +31,7 @@ $menu = mysqli_query($connect,$sql);
         <div class="form-group">
             <?php
             $id = $_GET["id"];
-            include_once "../root/connect.php";
+            include_once "../connect.php";
             $sql = "SELECT * FROM manufactures WHERE id='$id'";
             $row=mysqli_query($connect,$sql);
             $each = mysqli_fetch_array($row);
@@ -74,5 +74,5 @@ $menu = mysqli_query($connect,$sql);
 
 <?php
 
-include_once "../root/footer.php";
+include_once "../footer.php";
 ?>

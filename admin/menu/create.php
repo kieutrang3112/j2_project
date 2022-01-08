@@ -1,6 +1,6 @@
 <?php
-include_once "../root/header.php";
-include_once "../root/sidebar.php";
+include_once "../header.php";
+include_once "../sidebar.php";
 ?>
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -41,5 +41,5 @@ include_once "../root/sidebar.php";
 
 <?php
 
-include_once "../root/footer.php";
+include_once "../footer.php";
 ?>

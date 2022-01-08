@@ -3,7 +3,7 @@
     unset($_SESSION['id']);
     unset($_SESSION['name']);
 setcookie('remember',null,-1);
-    header("location: sign-in.php");
+    header("location: index.php");
 
 ?>
 

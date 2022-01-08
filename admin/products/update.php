@@ -1,7 +1,7 @@
 <?php
-include_once "../root/header.php";
-include_once "../root/sidebar.php";
-include_once "../root/connect.php";
+include_once "../header.php";
+include_once "../sidebar.php";
+include_once "../connect.php";
 $id = $_GET["id"];
 $sql = "SELECT * FROM products WHERE id='$id'";
 $row=mysqli_query($connect,$sql);
@@ -106,6 +106,6 @@ $menu = mysqli_query($connect,$sql);
 
 <?php
 
-include_once "../root/footer.php";
+include_once "../footer.php";
 ?>
 

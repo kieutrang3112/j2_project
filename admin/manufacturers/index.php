@@ -1,7 +1,7 @@
 <?php
-include_once "../root/header.php";
-include_once "../root/sidebar.php";
-include_once "../root/connect.php";
+include_once "../header.php";
+include_once "../sidebar.php";
+include_once "../connect.php";
 $sql = "SELECT * FROM menu";
 $result_menu = mysqli_query($connect,$sql);
 ?>
@@ -37,7 +37,7 @@ $result_menu = mysqli_query($connect,$sql);
         </thead>
         <tbody>
         <?php
-            include_once "../root/connect.php";
+            include_once "../connect.php";
             $sql = "SELECT * FROM manufactures ORDER BY id DESC ";
             $row=mysqli_query($connect,$sql);
             foreach ($row as $each) {
@@ -64,5 +64,5 @@ $result_menu = mysqli_query($connect,$sql);
     <!--end main-->
 
     <?php
-    include_once "../root/footer.php";
+    include_once "../footer.php";
     ?>

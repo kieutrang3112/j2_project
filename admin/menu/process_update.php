@@ -3,7 +3,7 @@ $id = $_POST["id"];
 $name = $_POST["name"];
 
 
-require_once '../root/connect.php';
+require_once '../connect.php';
 $sql = "UPDATE menu
     SET    
     name = '$name'
