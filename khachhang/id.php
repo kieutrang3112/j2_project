@@ -9,9 +9,10 @@ $each = mysqli_fetch_array($result)
 ?>
 
 <div id="div_giua">
-	 <img height="100"  src="admin/products/photos/<?php echo $each['photo'] ?>">
 	<a><div class="name"><?php echo $each['name'] ?></div></a>
+	<img height="500"  src="../admin/products/photo/<?php echo $each['photo'] ?>">
 	<div class="prices"><?php echo $each['price'] ?></div>
-	<p><?php echo $each['description'] ?></p>	
+	<br><br><br><br>
+	<p><?php echo nl2br($each['description']) ?></p>	
 		
 </div>

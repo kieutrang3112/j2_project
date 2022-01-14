@@ -29,7 +29,7 @@
  	</tr>
  	<?php foreach($cart as $id => $each){ ?>
  		<tr>
- 			<td><img height="100" src="admin/products/photos/<?php echo $each['photo'] ?>"></td>
+ 			<td><img height="100" src="../admin/products/photo/<?php echo $each['photo'] ?>"></td>
  			<td><?php echo $each['name'] ?></td>
  			<td><?php echo $each['price'] ?></td>
  			<td>
