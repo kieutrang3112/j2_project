@@ -14,7 +14,7 @@ $total_price = 0;
 foreach($cart as $each){
 	$total_price += $each['quantity'] * $each['price'];
 }
-$customer_id = $_SESSION['id'];
+$customer_id = $_SESSION['id_cus'];
 $status = 0;
 
 $sql = "INSERT INTO orders (customer_id, receiver_name, receiver_phone, receiver_address, status, note, total_price)

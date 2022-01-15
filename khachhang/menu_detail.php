@@ -1,4 +1,3 @@
-
 <style type="text/css"></style>
 <?php 
 $name = $_GET['name'];
@@ -20,7 +19,7 @@ $result = mysqli_query($connect,$sql); ?>
 			<a><div class="name"><?php echo $each['name'] ?></div></a>
 			<div class="prices">Free</div>
 			<a 
-			<?php if(!empty($_SESSION['id'])) { ?> 
+			<?php if(!empty($_SESSION['id_cus'])) { ?> 
 					href="add_to_cart.php?id=<?php echo $each['id'] ?>" 
 			<?php }else{  ?> 
 				   href="signin.php" 

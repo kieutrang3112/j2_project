@@ -31,8 +31,8 @@ $sql = "select id from customers
 where email = '$email'";
 $result = mysqli_query($connect,$sql);
 $id = mysqli_fetch_array($result)['id'];
-$_SESSION['id'] = $id;
-$_SESSION['name'] = $name;
+$_SESSION['id_cus'] = $id;
+$_SESSION['name_cus'] = $name;
 
 header('location:signin.php');
 

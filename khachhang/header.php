@@ -24,7 +24,7 @@
 	</div>
 	
 	<div class="phai">
-		<?php if(empty($_SESSION['id'])) { ?>
+		<?php if(empty($_SESSION['id_cus'])) { ?>
 		<a href="signin.php">
 			<div style="position: absolute;right: 20px;top: 15px;text-align: center;">			
 				
@@ -45,7 +45,7 @@
 			</div>
 		</a>
 		<?php } ?>
-		<?php if(!empty($_SESSION['id'])) { ?>				
+		<?php if(!empty($_SESSION['id_cus'])) { ?>				
 		<a href="view_cart.php ">
 			<div style="position: absolute;right: 150px;text-align: center;">				
 				<img src="img\giohang.png" style="width: 80px;">

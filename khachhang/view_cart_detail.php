@@ -4,6 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<style type="text/css">
+		tr{
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
 <div id="div_giua">
@@ -62,7 +67,7 @@
 	$<?php echo $sum ?>
 </h1>
 <?php 
-	$id = $_SESSION['id'];
+	$id = $_SESSION['id_cus'];
 	require '../admin/connect.php';
 	$sql = "select * from customers where id = '$id'";
 	$result = mysqli_query($connect,$sql);

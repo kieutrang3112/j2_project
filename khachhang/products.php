@@ -29,7 +29,7 @@ $result_laptop = mysqli_query($connect,$sql_laptop);
 				<a><div class="name"><?php echo $each['name'] ?></div></a>
 				<div class="prices"><?php echo $each['price'] ?></div>
 				<a 
-				<?php if(!empty($_SESSION['id'])) { ?> 
+				<?php if(!empty($_SESSION['id_cus'])) { ?> 
 						href="add_to_cart.php?id=<?php echo $each['id'] ?>" 
 				<?php }else{  ?> 
 					   href="signin.php" 
@@ -48,13 +48,13 @@ $result_laptop = mysqli_query($connect,$sql_laptop);
 				<a href="product.php?id=<?php echo $each['id'] ?>"><img class="san_pham" src="../admin/products/photo/<?php echo $each['photo'] ?>"></a>
 				<a><div class="name"><?php echo $each['name'] ?></div></a>
 				<div class="prices"><?php echo $each['price'] ?></div>
-				<!-- <?php if(!empty($_SESSION['id'])) { ?>
+				<!-- <?php if(!empty($_SESSION['id_cus'])) { ?>
 					<a href="add_to_cart.php?id=<?php echo $each['id'] ?>">
 						Thêm vào giỏ
 					</a>
 				<?php } ?>	 -->
 				<a 
-				<?php if(!empty($_SESSION['id'])) { ?> 
+				<?php if(!empty($_SESSION['id_cus'])) { ?> 
 						href="add_to_cart.php?id=<?php echo $each['id'] ?>" 
 				<?php }else{  ?> 
 					   href="signin.php" 
@@ -74,7 +74,7 @@ $result_laptop = mysqli_query($connect,$sql_laptop);
 				<a href="product.php?id=<?php echo $each['id'] ?>"><img class="san_pham" src="../admin/products/photo/<?php echo $each['photo'] ?>"></a>
 				<a><div class="name"><?php echo $each['name'] ?></div></a>
 				<div class="prices"><?php echo $each['price'] ?></div>
-				<?php if(!empty($_SESSION['id'])) { ?>
+				<?php if(!empty($_SESSION['id_cus'])) { ?>
 					<a href="add_to_cart.php?id=<?php echo $each['id'] ?>">
 						Thêm vào giỏ
 					</a>

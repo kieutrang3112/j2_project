@@ -14,13 +14,13 @@ if (isset($_COOKIE['remember'])) {
 	$number_rows = mysqli_num_rows($result);
 	if (number_rows ==1) {
 		$each = mysqli_fetch_array($result);
-		$_SESSION['id'] = $each['id'];
-		$_SESSION['name'] = $each['name'];
+		$_SESSION['id_cus'] = $each['id'];
+		$_SESSION['name_cus'] = $each['name'];
 	}
 	
 }
 
-if (isset($_SESSION['id'])) {
+if (isset($_SESSION['id_cus'])) {
 	header('location:index.php');
 	exit;
 }
