@@ -74,7 +74,7 @@
     <div class="wrap">
         <form class="login-form" method="post" action="process_signup.php" >
             <div class="form-header">
-                <h3>Đăng nhập</h3>
+                <h3>Đăng ký</h3>
                
             </div>
             <!--Email Input-->
