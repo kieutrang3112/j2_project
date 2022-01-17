@@ -45,22 +45,62 @@
             <div class="panel-heading">Vietpro Mobile Shop - Administrator</div>
             <div class="panel-body">
                 <div class="alert alert-danger">Tài khoản không hợp lệ !</div>
+                <?php 
+                
+                if (isset($_SESSION['error'])) {
+                    echo $_SESSION['error'];
+                    unset($_SESSION['error']);
+                }
+                ?>
                 <form role="form" method="post" action="precess_signin.php">
                     <fieldset>
                         <div class="form-group">
-                            <input class="form-control" required placeholder="E-mail" name="mail" type="email" autofocus>
+                            <input class="form-control" required placeholder="E-mail" name="email" id="email" type="email" autofocus>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" required placeholder="Mật khẩu" name="pass" type="password" value="">
+                            <input class="form-control" required placeholder="Mật khẩu" name="password" id="password" type="password" value="">
                         </div>
                         <div class="checkbox">
                             <label>
                                 <input name="remember" type="checkbox" value="Remember" >Nhớ tài khoản
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                        <button type="submit" class="btn btn-primary" onclick="return check()">Đăng nhập</button>
                     </fieldset>
                 </form>
+                <script type="text/javascript">
+                    function check(){
+                        //email
+                        let email=document.getElementById('email').value;
+                        if(email.length===0){
+                            document.getElementById('error_email').innerHTML="Email không được để trống";
+                            check_error=true;
+                        }else{
+                            let regex_email=/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/;
+                            if(!regex_email.test(email)){
+                                document.getElementById('error_email').innerHTML='Email không hợp lệ';
+                            }else{
+                                document.getElementById('error_email').innerHTML='';
+                            }
+                        }
+                        
+                        //mật khẩu
+                        let password=document.getElementById('password').value;
+                        if(password.length===0){
+                            document.getElementById('error_password').innerHTML="Mật khẩu không được để trống";
+                            check_error=true;
+                        
+                        }else{
+                            document.getElementById('error_password').innerHTML='';
+                        }
+
+
+                        if(check_error){
+                            return false;
+                        }
+                    }
+
+                </script>
             </div>
         </div>
     </div><!-- /.col-->
