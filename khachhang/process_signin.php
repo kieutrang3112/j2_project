@@ -34,6 +34,9 @@ if ($number_rows == 1) {
 	}
 	header('location:index.php');
 	exit();
+}else{
+	$_SESSION['error'] = "Đăng nhập thất bại";
+	header("location:signin.php");
 }
 
-header("location:signin.php");
+

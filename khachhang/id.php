@@ -14,5 +14,5 @@ $each = mysqli_fetch_array($result)
 	<div class="prices"><?php echo $each['price'] ?></div>
 	<br><br><br><br>
 	<p><?php echo nl2br($each['description']) ?></p>	
-		
+	
 </div>
