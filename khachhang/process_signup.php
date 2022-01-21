@@ -22,9 +22,14 @@ if ($number_rows ==1) {
 	exit;
 }
 
-$sql = "INSERT INTO customers (name, phone, gender, address, email, password)
+$sql = "INSERT INTO customersl (name, phone, gender, address, email, password)
 values ('$name', '$phone', '$gender', '$address', '$email', '$password')";
 mysqli_query($connect,$sql);
+require 'mail.php';
+$title ="Đăng ký thành công";
+$content = "Chúc mừng bạn đã đăng ký thành công";
+sendmail($email,$name,$title,$content);
+
 
 
 $sql = "select id from customers

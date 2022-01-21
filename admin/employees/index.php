@@ -60,12 +60,10 @@ include_once "../sidebar.php";
                 <?php } else echo "Nhân viên"?>
 
             </td>
-
-            <?php }
-            mysqli_close($connect);
-            ?>
-
         </tr>
+        <?php }
+        mysqli_close($connect);
+        ?>
         </tbody>
 
     </table>

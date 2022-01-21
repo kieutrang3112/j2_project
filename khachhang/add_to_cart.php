@@ -25,4 +25,4 @@ if (empty($_SESSION['cart'][$id])) {
 	$_SESSION['cart'][$id]['quantity']++;
 }
 
- header('location:view_cart.php');
+header('location:view_cart.php');
