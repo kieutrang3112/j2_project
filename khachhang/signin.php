@@ -21,7 +21,7 @@ if (isset($_COOKIE['remember'])) {
 }
 
 if (isset($_SESSION['id_cus'])) {
-	header('location:admin.php');
+	header('location:index.php');
 	exit;
 }
 
