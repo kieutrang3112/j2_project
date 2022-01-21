@@ -61,4 +61,6 @@ foreach($cart as $product_id => $each){
 mysqli_close($connect);
 unset($_SESSION['cart']);
 
+
 header('location:view_cart.php');
+
