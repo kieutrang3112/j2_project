@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+if (!isset($_SESSION['name'])) {
+	header('location: /admin/index.php');
+}
+?>
+<?php
     include_once "../header.php";
     include_once "../sidebar.php";
     ?>

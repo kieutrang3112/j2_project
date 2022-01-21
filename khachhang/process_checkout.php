@@ -62,5 +62,7 @@ mysqli_close($connect);
 unset($_SESSION['cart']);
 
 
+
 header('location:view_cart.php');
+
 

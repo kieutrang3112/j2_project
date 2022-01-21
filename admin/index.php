@@ -1,28 +1,3 @@
-
-<!--đăng nhập-->
-<?php
-    session_start();
-    if(isset($_COOKIE['remember'])) {
-        $token = $_COOKIE['remember'];
-
-    require_once "connect.php";
-    $sql="SELECT * FROM employees
-        WHERE token='$token' ";
-    $result =mysqli_query($connect, $sql);
-    $each = mysqli_fetch_array($result);
-        $_SESSION['id'] = $each['id'];
-        $_SESSION['name'] = $each['name'];
-        header("location: ../admin/root/index.php");
-    }
-    if(isset($_SESSION['id'])) {
-        header("location: ../admin/root/index.php");
-        exit();
-    }
-
-    include_once "header_index.php";
-
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,14 +12,21 @@
 </head>
 <body>
 
-</body>
-</html>
 <div class="row">
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
         <div class="login-panel panel panel-default">
             <div class="panel-heading">Vietpro Mobile Shop - Administrator</div>
             <div class="panel-body">
                 <div class="alert alert-danger">Tài khoản không hợp lệ !</div>
+<<<<<<< HEAD
+                <form role="form" method="post" action="process_login.php">
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control" required placeholder="E-mail" name="email" type="email" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" required placeholder="Mật khẩu" name="password" type="password" value="">
+=======
                 <?php 
                 
                 if (isset($_SESSION['error'])) {
@@ -59,6 +41,7 @@
                         </div>
                         <div class="form-group">
                             <input class="form-control" required placeholder="Mật khẩu" name="password" id="password" type="password" value="">
+>>>>>>> 66144db808bdd1b63f7a942ad0e4d132d6a85bb6
                         </div>
                         <div class="checkbox">
                             <label>
@@ -106,4 +89,5 @@
     </div><!-- /.col-->
 </div><!-- /.row -->
 
-
+</body>
+</html>
