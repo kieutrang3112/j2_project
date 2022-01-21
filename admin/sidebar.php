@@ -8,14 +8,19 @@
             </a></li>
         <li>
             <br>
-            <a href="../manufacturers/index.php">Nhà sản xuất</a>
+            <a href="/admin/manufacturers/index.php">Nhà sản xuất</a>
         </li>
         <li>
-            <a href="../menu/index.php">Danh mục</a>
+            <a href="/admin/menu/index.php">Danh mục</a>
         </li>
         <li>
-            <a href="../products/index.php">
+            <a href="/admin/products">
                 Sản phẩm
+            </a>
+        </li>
+        <li>
+            <a href="/admin/orders">
+                Đơn hàng
             </a>
         </li>
 <!--        <li>-->
@@ -24,22 +29,18 @@
 
         <li role="presentation" class="divider"></li>
         <li>
-            <a href="../employees">
+            <a href="/admin/employees">
                 Thông tin nhân viên
             </a>
         </li>
         <li>
-            <a href="../customers/index.php">
+            <a href="/admin/customers">
                  Thông tin khách hàng
             </a>
         </li>
+
         <li>
-            <a href="../">
-                Đăng nhập
-            </a>
-        </li>
-        <li>
-            <a href="../sign-out.php">
+            <a href="/admin/sign-out.php">
                 Đăng xuất
             </a>
         </li>
