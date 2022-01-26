@@ -1,33 +1,15 @@
+<!--đăng ký-->
 <?php
- require '../check_admin_login.php'; 
-?>
-<?php
-include_once "../header.php";
-include_once "../sidebar.php";
-include_once "../connect.php";
-$sql = "SELECT * FROM manufactures";
-$result = mysqli_query($connect,$sql);
-
-$sql = "SELECT * FROM menu";
-$result_menu = mysqli_query($connect,$sql);
+        include_once "../root/header.php";
 ?>
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-    <div class="row">
-        <ol class="breadcrumb">
-            <li>
-                <a href="#">
-                </a>
-            </li>
-            <li class="active">Tổng quan</li>
-        </ol>
-    </div>
     <!--/.row-->
 
     <div class="row">
         <div class="col-lg-6">
-            <h1 class="page-header">Quản lý sản phẩm</h1>
-            <a href="index.php"><button type="button" class="btn btn-primary ">Danh sách</button></a>
+            <h1 class="page-header">Đăng Ký</h1>
+            <a href="index.php"><button type="button" class="btn btn-primary ">Đăng nhập</button></a>
         </div>
 
     </div>
@@ -47,23 +29,12 @@ $result_menu = mysqli_query($connect,$sql);
                 <label>Mô tả</label>
                 <textarea class="form-control" rows="3"   name="desc" placeholder="Enter ..."></textarea>
             </div>
-<!--            <input type="number" class="form-control" required placeholder="Nhập danh mục" name="manu_id">-->
-            <div class="form-group">
-                <label>Nhà sản xuất</label>
-                <select class="form-control" name="manu_id">
-                    <option>---Chọn---</option>
-                    <?php foreach ($result as $each_manu) { ?>
-
-                    <option value="<?php echo $each_manu["id"]?>"> <?php echo $each_manu["name"]?></option>
-
-                    <?php } ?>
-                </select>
-            </div>
+            <!--            <input type="number" class="form-control" required placeholder="Nhập danh mục" name="manu_id">-->
             <div class="form-group">
                 <label>Danh mục</label>
-                <select class="form-control" name="menu_id">
+                <select class="form-control" name="manu_id">
                     <option>---Chọn---</option>
-                    <?php foreach ($result_menu as $each) { ?>
+                    <?php foreach ($result as $each) { ?>
 
                         <option value="<?php echo $each["id"]?>"> <?php echo $each["name"]?></option>
 
@@ -81,7 +52,7 @@ $result_menu = mysqli_query($connect,$sql);
 
 </div>
 
-<?php
 
-include_once "../footer.php";
+<?php
+    include_once "../root/footer.php";
 ?>

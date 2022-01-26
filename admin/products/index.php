@@ -1,9 +1,5 @@
 <?php
-
-session_start();
-if (!isset($_SESSION['name'])) {
-	header('location: /admin/index.php');
-}
+ require '../check_admin_login.php'; 
 ?>
 <?php
     include_once "../header.php";

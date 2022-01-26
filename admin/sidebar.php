@@ -3,24 +3,19 @@
     </form>
     <ul class="nav menu">
 
-        <li class="active"><a href="../">
+        <li class="active"><a href="../index.php">
                 </svg> Tổng quan
             </a></li>
         <li>
             <br>
-            <a href="/admin/manufacturers/index.php">Nhà sản xuất</a>
+            <a href="../manufacturers/index.php">Nhà sản xuất</a>
         </li>
         <li>
-            <a href="/admin/menu/index.php">Danh mục</a>
+            <a href="../menu/index.php">Danh mục</a>
         </li>
         <li>
-            <a href="/admin/products">
+            <a href="../products/index.php">
                 Sản phẩm
-            </a>
-        </li>
-        <li>
-            <a href="/admin/orders">
-                Đơn hàng
             </a>
         </li>
 <!--        <li>-->
@@ -29,23 +24,15 @@
 
         <li role="presentation" class="divider"></li>
         <li>
-            <a href="/admin/employees">
+            <a href="../employees">
                 Thông tin nhân viên
             </a>
         </li>
         <li>
-            <a href="/admin/customers">
+            <a href="../customers/index.php">
                  Thông tin khách hàng
             </a>
         </li>
-
-        <li>
-            <a href="/admin/sign-out.php">
-                Đăng xuất
-            </a>
-        </li>
-        
-
 
     </ul>
 

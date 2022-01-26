@@ -18,8 +18,16 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#"><span>Trang </span>Admin</a>
-
+            <ul class="user-menu">
+                <li class="dropdown pull-right">
+                    <a href="#" class="drop-menu-header" data-toggle="dropdown"> admin <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Thông tin</a></li>
+                        <br>
+                        <li><a href="../logout.php">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div><!-- /.container-fluid -->
 </nav>
-
