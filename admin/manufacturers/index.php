@@ -1,7 +1,5 @@
 <?php
- require '../check_super_admin_login.php'; 
-?>
-<?php
+require '../check_super_admin_login.php'; 
 include_once "../header.php";
 include_once "../sidebar.php";
 include_once "../connect.php";

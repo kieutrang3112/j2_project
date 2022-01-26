@@ -51,7 +51,7 @@
                     unset($_SESSION['error']);
                 }
                 ?>
-                <form role="form" method="post" action="precess_signin.php">
+                <form role="form" method="post" action="process_signin.php">
                     <fieldset>
                         <div class="form-group">
                             <input class="form-control" required placeholder="E-mail" name="email" id="email" type="email" autofocus>

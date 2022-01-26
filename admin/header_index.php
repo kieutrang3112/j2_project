@@ -24,7 +24,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Thông tin</a></li>
                         <br>
-                        <li><a href="../logout.php">Logout</a></li>
+                        <li><a href="">Logout</a></li>
                     </ul>
                 </li>
             </ul>

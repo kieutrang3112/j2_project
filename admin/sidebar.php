@@ -3,7 +3,7 @@
     </form>
     <ul class="nav menu">
 
-        <li class="active"><a href="../index.php">
+        <li class="active"><a href="../">
                 </svg> Tổng quan
             </a></li>
         <li>
@@ -16,6 +16,11 @@
         <li>
             <a href="../products/index.php">
                 Sản phẩm
+            </a>
+        </li>
+        <li>
+            <a href="../orders/index.php">
+                Đơn hàng
             </a>
         </li>
 <!--        <li>-->
@@ -33,6 +38,18 @@
                  Thông tin khách hàng
             </a>
         </li>
+        <li>
+            <a href="../">
+                Đăng nhập
+            </a>
+        </li>
+        <li>
+            <a href="../sign-out.php">
+                Đăng xuất
+            </a>
+        </li>
+        
+
 
     </ul>
 

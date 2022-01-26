@@ -1,6 +1,4 @@
-<?php
- require '../check_admin_login.php'; 
-?>
+
     <!-- header -->
     <?php include_once "../header_index.php" ?>
     <!-- header -->
@@ -71,4 +69,3 @@
         include_once "../footer.php";
 
     ?>
-    

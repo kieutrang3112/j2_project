@@ -1,4 +1,5 @@
 <?php
+require '../check_admin_login.php'; 
 include_once "../header.php";
 include_once "../sidebar.php";
 ?>
@@ -20,7 +21,7 @@ include_once "../sidebar.php";
             <th>Giới tính</th>
             <th>Số Điện Thoại</th>
             <th>Email</th>
-
+            <th>Thao tác</th>
         </tr>
         </thead>
         <tbody>
@@ -42,12 +43,14 @@ include_once "../sidebar.php";
             </td>
             <td><?php echo $each["phone"]?></td>
             <td><?php echo $each["email"]?></td>
-
-            <?php }
-            mysqli_close($connect);
-            ?>
+            <td>  
+                <a href="delete.php?id=<?php echo $each["id"]?>"><button type="button" class="btn btn-danger">Xóa</button></a>
+            </td>
 
         </tr>
+        <?php }
+            mysqli_close($connect);
+        ?>
         </tbody>
 
     </table>

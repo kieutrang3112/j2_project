@@ -1,4 +1,5 @@
 <?php
+require '../check_super_admin_login.php'; 
 include_once "../header.php";
 include_once "../sidebar.php";
 ?>
@@ -9,6 +10,7 @@ include_once "../sidebar.php";
     <div class="row">
         <div class="col-lg-6">
             <h1 class="page-header">Thông tin nhân viên</h1>
+            <a href="create.php"><button type="button" class="btn btn-primary">Thêm</button></a>
         </div>
 
     </div>
@@ -22,7 +24,8 @@ include_once "../sidebar.php";
             <th>Email</th>
             <th>Số năm công tác</th>
             <th>Địa chỉ</th>
-            <th>Cấp độ</th>
+            <th>Vai trò</th>
+            <th>Thao tác</th>
 
         </tr>
         </thead>
@@ -58,12 +61,13 @@ include_once "../sidebar.php";
                 <?php } else echo "Nhân viên"?>
 
             </td>
-
-            <?php }
-            mysqli_close($connect);
-            ?>
-
+            <td>  
+                <a href="delete.php?id=<?php echo $each["id"]?>"><button type="button" class="btn btn-danger">Xóa</button></a>
+            </td>
         </tr>
+        <?php }
+        mysqli_close($connect);
+        ?>
         </tbody>
 
     </table>
