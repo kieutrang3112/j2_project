@@ -14,10 +14,16 @@
 		<a href="index.php"><img src="img\logo.png" style="width: 100%;height: 100%;"></a>
 	</div>
 
-	<div class="giua">				
-		<form style="position: absolute;top:20px;left: 45px;">
-			<input type="text" name="tim_kiem" placeholder="    Nhập tên điện thoại, máy tính, phụ kiện,... cần tìm"
-			style="width: 600px;height: 40px;border-radius: 2px;border: none;font-size: 14px;">
+	<div class="giua">
+	<?php 
+		$search ='';
+		if (isset($_GET['search'])) {
+		 	$search =$_GET['search'];
+		 } 
+	?>				
+		<form style="position: absolute;top:20px;left: 45px;" method="get" action="search.php">
+			<input type="search" name="search" value="<?php echo $search ?>" placeholder="    Nhập tên điện thoại, máy tính, phụ kiện,... cần tìm"
+			style="width: 600px;height: 40px;border-radius: 2px;border: none;font-size: 14px;padding-left: 20px;">
 			
 			<button type="submit" style="height: 40px;">Tìm Kiếm</button>
 		</form>

@@ -6,12 +6,14 @@ order by products.id desc limit 4";
 
 $sql_phone = "select products.*
 from products
-join menu where products.menu_id = menu.id and menu.name like '%ĐIỆN THOẠI%' limit 4";
+join menu where products.menu_id = menu.id and menu.name like '%ĐIỆN THOẠI%'
+order by products.price desc limit 4";
 
 
 $sql_laptop = "select products.*
 from products
-join menu where products.menu_id = menu.id and menu.name like '%LAPTOP%' limit 4";
+join menu where products.menu_id = menu.id and menu.name like '%LAPTOP%'
+order by products.price desc limit 4";
 
 $result = mysqli_query($connect,$sql);
 $result_phone = mysqli_query($connect,$sql_phone);

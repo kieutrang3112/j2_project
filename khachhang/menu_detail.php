@@ -1,15 +1,33 @@
 <style type="text/css"></style>
 <?php 
 $name = $_GET['name'];
+$page = 1;
+if (isset($_GET['page'])) {
+	$page = $_GET['page'];
+}
+
 require '../admin/connect.php';
-$sql = "select products.*
+
+$sql_number = "select products.*
 from products
 join menu where products.menu_id = menu.id and menu.name like '$name'";
+$results = mysqli_query($connect,$sql_number);
+$number_results = mysqli_num_rows($results);
 
-$result = mysqli_query($connect,$sql); ?>
 
-<div id="div_giua">
-	<div class="tren">				
+$number_results_per_page = 8;
+$number_page = ceil($number_results / $number_results_per_page);
+$next_page = $number_results_per_page * ($page -1);
+
+$sql = "select products.*
+from products
+join menu where products.menu_id = menu.id and menu.name like '$name'
+limit $number_results_per_page offset $next_page";
+
+$result = mysqli_query($connect,$sql);
+?>
+<div id="div_giua">	
+	<div class="tong">				
 		<div class="loai_san_pham">
 			<h2><?php echo $name ?></h2>
 		</div>
@@ -27,6 +45,14 @@ $result = mysqli_query($connect,$sql); ?>
 					Thêm vào giỏ
 				</a>										
 			</div>
-		<?php } ?>
+		<?php } ?>		
 	</div>
+	Trang
+	<?php for($i=1; $i <=$number_page;$i++){ ?>
+			<a href="menu.php?page=<?php echo $i ?>&name=<?php echo $name ?>">
+				<button>
+					<?php echo $i ?>
+				</button>				
+			</a>
+	<?php } ?>
 </div>
